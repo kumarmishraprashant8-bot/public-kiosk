@@ -17,7 +17,7 @@ services:
         value: 3.11.0
 
   # KIOSK FRONTEND (React/Vite)
-  - type: static
+  - type: web
     name: civicpulse-kiosk
     env: static
     region: singapore
@@ -36,7 +36,7 @@ services:
           property: url
 
   # ADMIN FRONTEND (React/Vite)
-  - type: static
+  - type: web
     name: civicpulse-admin
     env: static
     region: singapore
