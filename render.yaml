@@ -20,7 +20,6 @@ services:
   - type: web
     name: civicpulse-kiosk
     env: static
-    plan: free
     buildCommand: cd frontend-kiosk && npm install && npm run build
     staticPublishPath: frontend-kiosk/dist
     routes:
@@ -35,7 +34,6 @@ services:
   - type: web
     name: civicpulse-admin
     env: static
-    plan: free
     buildCommand: cd frontend-admin && npm install && npm run build
     staticPublishPath: frontend-admin/dist
     routes:
