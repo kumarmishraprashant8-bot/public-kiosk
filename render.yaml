@@ -20,7 +20,6 @@ services:
   - type: web
     name: civicpulse-kiosk
     env: static
-    region: singapore
     plan: free
     buildCommand: cd frontend-kiosk && npm install && npm run build
     staticPublishPath: frontend-kiosk/dist
@@ -30,16 +29,12 @@ services:
         destination: /index.html
     envVars:
       - key: VITE_API_URL
-        fromService:
-          type: web
-          name: civicpulse-backend
-          property: url
+        value: "https://civicpulse-backend.onrender.com" # Placeholder, update in dashboard if needed
 
   # ADMIN FRONTEND (React/Vite)
   - type: web
     name: civicpulse-admin
     env: static
-    region: singapore
     plan: free
     buildCommand: cd frontend-admin && npm install && npm run build
     staticPublishPath: frontend-admin/dist
@@ -49,10 +44,7 @@ services:
         destination: /index.html
     envVars:
       - key: VITE_API_URL
-        fromService:
-          type: web
-          name: civicpulse-backend
-          property: url
+        value: "https://civicpulse-backend.onrender.com" # Placeholder, update in dashboard if needed
 
 databases:
   - name: civicpulse-db
